@@ -1,0 +1,94 @@
+{
+  "projectType": "application",
+  "root": "apps/angular-to-azure",
+  "sourceRoot": "apps/angular-to-azure/src",
+  "prefix": "angular-to-azure",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/angular-to-azure",
+        "index": "apps/angular-to-azure/src/index.html",
+        "main": "apps/angular-to-azure/src/main.ts",
+        "polyfills": "apps/angular-to-azure/src/polyfills.ts",
+        "tsConfig": "apps/angular-to-azure/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/angular-to-azure/src/favicon.ico",
+          "apps/angular-to-azure/src/assets"
+        ],
+        "styles": ["apps/angular-to-azure/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/angular-to-azure/src/environments/environment.ts",
+              "with": "apps/angular-to-azure/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "angular-to-azure:build:production"
+        },
+        "development": {
+          "browserTarget": "angular-to-azure:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "angular-to-azure:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/angular-to-azure/src/**/*.ts",
+          "apps/angular-to-azure/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/angular-to-azure"],
+      "options": {
+        "jestConfig": "apps/angular-to-azure/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

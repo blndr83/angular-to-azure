@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "projects": {
+    "angular-to-azure": "apps/angular-to-azure"
+  }
+}
