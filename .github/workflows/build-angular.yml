@@ -41,4 +41,4 @@ jobs:
 
     steps:
     - name: build dockerfile
-    - run: docker run -t "angular-to-azure":"latest" .
+      run: docker run -t "angular-to-azure":"latest" .
