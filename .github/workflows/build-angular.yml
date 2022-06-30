@@ -34,11 +34,5 @@ jobs:
           name: dist
           path: dist
           retention-days: 1
-
-  build-docker:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
     - name: build dockerfile
       run: docker build -t "angular-to-azure":"latest" .
