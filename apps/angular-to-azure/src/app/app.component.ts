@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'angular-to-azure-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-to-azure';
+  text = new FormControl('');
+  foo: string = "";
+
+  constructor(private service: LoginService){}
+
+  send(): void {
+    this.service.login(this.text.value).subscribe((result) => this.foo = result);
+  }
 }

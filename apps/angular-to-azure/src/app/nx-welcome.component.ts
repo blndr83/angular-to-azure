@@ -26,7 +26,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
       body {
         font-family: inherit;
         line-height: inherit;
-        margin: 0;
       }
       h1,
       h2,
