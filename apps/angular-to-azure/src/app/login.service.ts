@@ -10,6 +10,6 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   login(name: string): Observable<string> {
-    return this.http.get<string>(`/api/login?name=${name}`);
+    return this.http.get(`/api/login?name=${name}`, {responseType: 'text'});
   }
 }
