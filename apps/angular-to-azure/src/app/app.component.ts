@@ -16,10 +16,10 @@ export class AppComponent {
   constructor(private service: LoginService, private registerService: RegisterService){}
 
   send(): void {
-    this.service.login(this.text.value).subscribe((result) => this.foo = result.name, (error) =>  this.foo = error.error);
+    this.service.login(this.text.value).subscribe((result) => this.foo = result.Name, (error) =>  this.foo = error.error);
   }
 
   register(): void {
-    this.registerService.register(this.text.value).subscribe((result) => this.foo = result.name, (error) =>  this.foo = error.error )
+    this.registerService.register(this.text.value).subscribe((result) => this.foo = result.Name, (error) =>  this.foo = error.error )
   }
 }
