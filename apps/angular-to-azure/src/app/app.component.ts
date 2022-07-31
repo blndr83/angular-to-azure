@@ -15,7 +15,6 @@ export class AppComponent {
   constructor(private service: LoginService){}
 
   send(): void {
-    this.service.login(this.text.value).subscribe((result) => this.foo = result.name, (error) => { this.foo = error; 
-      console.log(error);});
+    this.service.login(this.text.value).subscribe((result) => this.foo = result.name, (error) =>  this.foo = error.error);
   }
 }
